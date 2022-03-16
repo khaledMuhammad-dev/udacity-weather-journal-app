@@ -48,7 +48,7 @@ body{
 }
 
 .holder{
-
+    margin-bottom: 1.125rem;
 }
 
 .entry{
@@ -86,41 +86,46 @@ body{
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
 label{
-    display:block;
-    font-size: 27px;
+    font-size: 0.875rem;
+    color: var(--navy-blue);
+    font-weight: 400;
+    margin-bottom: 0.375rem;
 }
 
-input{
+
+input, 
+textarea{
     display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    padding: 4px 14px;
+    font-size: 16px;
     border: none;
+    background-color: #F3F6F7;
+    color: var(--navy-blue);
+}
+
+input {
+    width: 50%;
 }
 
 button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #01D66F, #01CC6A);
+    color: #ffffff;
+    font-size: 16px;
     border: none;
-    box-shadow: 2px 4px 5px #444;
+    text-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
 }
+
 h1{
     font-size: 36px;
 }
 
-textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-}
 /* Reset style for HTML element on active to have no border*/
 input:focus,
 select:focus,
@@ -130,19 +135,22 @@ button:focus {
 }
 /* Style for Placeholder Text*/
 ::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #7E7E7E;
+    font-size: 0.875rem; 
+    font-family: 'Poppins',sans-serif;
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #7E7E7E;
+    font-size: 0.875rem; 
+    font-family: 'Poppins',sans-serif;
 
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+    color: #7E7E7E;
+    font-size: 0.875rem; 
+    font-family: 'Poppins',sans-serif;
 
 } 
