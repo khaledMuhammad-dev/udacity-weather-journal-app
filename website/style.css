@@ -100,9 +100,32 @@ body{
     
 }
 
+.loader {
+    --size: 25px;
+    --border: 4px;
+    height: var(--size);
+    width: var(--size);
+
+    border: var(--border) solid var(--navy-blue);
+    border-top: var(--border) solid transparent;
+    border-radius: 100%;
+    animation: loader 450ms linear infinite;
+}
+
 #entryHolder{
     display: none;
 }
+
+
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* 
 #date{
 
@@ -179,6 +202,10 @@ button{
     margin-top: 18px;
 }
 
+button[disabled="true"] {
+    background: #baeed5;
+}
+
 h1{
     font-size: 36px;
 }
@@ -211,3 +238,4 @@ button:focus {
     font-family: var(--family);
 
 } 
+

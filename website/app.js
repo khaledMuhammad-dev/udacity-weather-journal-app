@@ -96,7 +96,7 @@
 
         if(RequestStatus !== 200) {
             console.log("Please check the zip code and try again!");
-            return
+            return;
         }
         
         try {
@@ -104,7 +104,7 @@
             const { date, temp, content } = allData.projectData;
             querySelector(".entry .title").style.display = "none";
             querySelector(".entry #entryHolder").style.display = "block";
-
+            
             querySelector("#date").innerHTML    = `🗓 ${ date.split(".").join("-") }`;
             querySelector("#temp").innerHTML    = `🌡 ${ temp } degrees`;
             querySelector("#content").innerHTML = `&nbsp;♥ ${ content }`;
@@ -117,12 +117,16 @@
         const zip     = zipInput.value; // required, number
         const content = contentInput.value; // required
         const date    = newDate;
-
+        
+        button.innerHTML = '<div class="loader"></div>';
+        button.setAttribute("disabled", "true");
 
         checkValidation({ zip, content });
         
         if(errors.length) {
             console.log(errors);
+            button.removeAttribute("disabled");
+            button.innerHTML = 'Generate';
             return;
         }
 
@@ -131,8 +135,10 @@
             postData("/add", { content, date, temp } );
 
             retrieveData();
-            zipInput.value = ""
-            contentInput.value = ""
+            button.innerHTML = 'Generate';
+            button.removeAttribute("disabled");
+            zipInput.value = "";
+            contentInput.value = "";
         });
     }
 
