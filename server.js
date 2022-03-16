@@ -20,6 +20,16 @@ app.use(cors());
 // Initialize the main project folder
 app.use(express.static('website'));
 
+app.get("/all", (req, res) => {
+    res.json({ projectData });
+});
+
+app.post("/add", (req, res) => {
+    projectData = { ...req.body };
+
+    res.json({ data: projectData, status: "Successful Post 👏"});
+});
+
 
 // Setup Server
 const port = 3000; 
