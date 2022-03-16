@@ -8,6 +8,7 @@
     --border: #142B41;
     --h1: 1.5rem;
     --radius: 4px;
+    --family: 'Poppins','Oswald', sans-serif;
 }
 
 @media only screen and (min-width: 576px) {
@@ -80,8 +81,8 @@ body{
 #app{
     min-height:100vh;
     justify-content: center;
+    font-family: var(--family);
     font-size: 1rem;
-    font-family: 'Poppins','Oswald', sans-serif;
     padding: 80px 0;
     background: #FAFAFA;
 }
@@ -150,11 +151,13 @@ textarea{
     border: none;
     background-color: #F3F6F7;
     color: var(--navy-blue);
+    font-family: var(--family);
     border-radius: var(--radius);
 }
 
 textarea {
     resize: none;
+    
 }
 
 input {
@@ -191,20 +194,20 @@ button:focus {
 ::placeholder { /* Firefox, Chrome, Opera */ 
     color: #7E7E7E;
     font-size: 0.875rem; 
-    font-family: 'Poppins',sans-serif;
+    font-family: var(--family);
 
 } 
   
 :-ms-input-placeholder { /* Internet Explorer 10-11 */ 
     color: #7E7E7E;
     font-size: 0.875rem; 
-    font-family: 'Poppins',sans-serif;
+    font-family: var(--family);
 
 } 
   
 ::-ms-input-placeholder { /* Microsoft Edge */ 
     color: #7E7E7E;
     font-size: 0.875rem; 
-    font-family: 'Poppins',sans-serif;
+    font-family: var(--family);
 
 } 
