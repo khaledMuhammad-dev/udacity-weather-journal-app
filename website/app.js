@@ -105,9 +105,9 @@
             querySelector(".entry .title").style.display = "none";
             querySelector(".entry #entryHolder").style.display = "block";
 
-            querySelector("#date").innerHTML    = `🗓 Date: ${ date.split(".").join("-") }`;
-            querySelector("#temp").innerHTML    = `🌡 Temperature: ${ temp } degrees`;
-            querySelector("#content").innerHTML = `&nbsp;♥ Feeling: ${ content }`;
+            querySelector("#date").innerHTML    = `🗓 ${ date.split(".").join("-") }`;
+            querySelector("#temp").innerHTML    = `🌡 ${ temp } degrees`;
+            querySelector("#content").innerHTML = `&nbsp;♥ ${ content }`;
         }catch(error) {
             console.log(error);
         }
