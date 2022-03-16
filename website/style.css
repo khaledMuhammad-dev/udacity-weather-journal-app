@@ -1,12 +1,24 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-
 :root {
     --navy-blue: #142B41;
     --light-green: #01D66F;
     --green: #01CC6A;
     --border: #142B41;
+    --h1: 1.5rem
+}
+
+@media only screen and (min-width: 576px) {
+    :root {
+        --h1: 2rem
+    }
+}
+
+@media only screen and (min-width: 786px) {
+    :root {
+        --h1: 2.5rem
+    }
 }
 
 /* 
@@ -64,7 +76,10 @@ body{
     font-weight: 600;
     text-shadow: 4px 0 4px  rgba(0, 0, 0, 0.25);
     color: var(--navy-blue);
+    font-size: var(--h1);
+    user-select: none;
 }
+
 .title{
 
 }
