@@ -66,9 +66,9 @@ body{
 }
 
 #entryHolder{
-
+    display: none;
 }
-
+/* 
 #date{
 
 }
@@ -79,7 +79,7 @@ body{
 
 #content{
 
-}
+} */
 
 .headline {
     text-align: center;
