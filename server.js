@@ -34,5 +34,6 @@ app.post("/add", (req, res) => {
 // Setup Server
 const port = 3000; 
 app.listen(port, () => {
-    console.log(`The server is running in port: ${ port }`);
+    console.log(`listening on port: ${ port }`);
 })
+
