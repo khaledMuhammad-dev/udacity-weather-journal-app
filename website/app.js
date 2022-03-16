@@ -98,13 +98,16 @@
             console.log("Please check the zip code and try again!");
             return
         }
+        
         try {
             const allData = await response.json();
             const { date, temp, content } = allData.projectData;
+            querySelector(".entry .title").style.display = "none";
+            querySelector(".entry #entryHolder").style.display = "block";
 
-            querySelector("#date").innerHTML    = `Date: ${ date.split(".").join("-") }`;
-            querySelector("#temp").innerHTML    = `Temperature: ${ temp } degrees`;
-            querySelector("#content").innerHTML = `Feeling: ${ content }`;
+            querySelector("#date").innerHTML    = `🗓 Date: ${ date.split(".").join("-") }`;
+            querySelector("#temp").innerHTML    = `🌡 Temperature: ${ temp } degrees`;
+            querySelector("#content").innerHTML = `&nbsp;♥ Feeling: ${ content }`;
         }catch(error) {
             console.log(error);
         }
