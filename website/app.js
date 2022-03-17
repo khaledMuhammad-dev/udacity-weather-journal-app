@@ -126,7 +126,7 @@
         if(errors.length) {
             console.log(errors);
             button.removeAttribute("disabled");
-            button.innerHTML = 'Generate';
+            button.innerHTML = 'Generate ⚙';
             return;
         }
 
@@ -135,7 +135,7 @@
             postData("/add", { content, date, temp } );
 
             retrieveData();
-            button.innerHTML = 'Generate';
+            button.innerHTML = 'Generate ⚙';
             button.removeAttribute("disabled");
             zipInput.value = "";
             contentInput.value = "";
