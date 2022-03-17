@@ -5,7 +5,7 @@
     --navy-blue: #142B41;
     --light-green: #01D66F;
     --green: #01CC6A;
-    --border: #142B41;
+    --border: rgba(20, 44, 66, 0.18);
     --h1: 1.5rem;
     --radius: 4px;
     --family: 'Poppins','Oswald', sans-serif;
@@ -49,13 +49,14 @@ body{
 
 
 .horizontal__line {
-    background: rgba(20, 44, 66, 0.25);
+    background: var(--border);
     height: 1px;
     width: 100%;
     border-radius: 50px;
     margin: 1rem 0;
 }
 /* end general */
+
 .icon {
     width: 60px;
 }
@@ -78,7 +79,7 @@ body{
 }
 
 
-#app{
+#app {
     min-height:100vh;
     justify-content: center;
     font-family: var(--family);
@@ -94,7 +95,7 @@ body{
 .entry{
     background: rgb(243, 246, 247);
     color: var(--navy-blue);
-    height: 247px;
+    height: 150px;
     padding: 18px;
     border-radius: var(--radius);
     
@@ -103,6 +104,7 @@ body{
 .loader {
     --size: 25px;
     --border: 4px;
+
     height: var(--size);
     width: var(--size);
 
@@ -162,6 +164,7 @@ label{
     color: var(--navy-blue);
     font-weight: 400;
     margin-bottom: 0.375rem;
+    transition: color 300ms ease;
 }
 
 
@@ -171,11 +174,12 @@ textarea{
     width: 100%;
     padding: 4px 14px;
     font-size: 16px;
-    border: none;
+    border: 1px solid var(--border);
     background-color: #F3F6F7;
     color: var(--navy-blue);
     font-family: var(--family);
     border-radius: var(--radius);
+    transition: border 150ms ease;
 }
 
 textarea {
@@ -185,6 +189,11 @@ textarea {
 
 input {
     width: 50%;
+}
+
+#errorMessage {
+    color: red;
+    font-size: 0.75rem;
 }
 
 button{
@@ -240,3 +249,12 @@ button:focus {
 
 } 
 
+
+
+.error input,
+.error textarea{
+    border: 1px solid red;
+}
+.error label {
+    color: red;
+}
