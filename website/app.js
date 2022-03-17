@@ -64,10 +64,14 @@
             errorcontainer.textContent = ""
         });
 
-        errors.forEach(err => {
+        errors.forEach((err, i) => {
             const {fieldName, error} = err;
             const holder = querySelector(`#${ fieldName }`).parentElement;
             const errorcontainer = holder.querySelector("#errorMessage");
+
+            if(i === 0) {
+                querySelector(`#${ fieldName }`).focus()
+            }
 
             if( !holder.classList.contains("error") ){
                 holder.classList.add("error");
@@ -176,10 +180,3 @@
 
     // Handle form submit
     button.addEventListener( "click", handleSubmit );
-
-
-    /**
-     * //// TODO ////
-     *  - validation style
-     *  - change the weather icon
-     */
