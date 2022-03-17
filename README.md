@@ -5,10 +5,10 @@
 This project for learning purpose.
 
 FWD scholarship<br/>
-[![FWD logo](/assets/fwd-egypt.jpg "fwd logo")](https://egfwd.com/)
+[![FWD logo](/website/assets/fwd-egypt.jpg "fwd logo")](https://egfwd.com/)
 
 Udacity platform<br/>
-[![Udacity logo](/assets/udacity.jpg "udacity logo")](https://www.udacity.com/)
+[![Udacity logo](/website/assets/udacity.jpg "udacity logo")](https://www.udacity.com/)
 
 ### ✨ Preview:
 project link [Weather Journal app ☁](https://udacity-weather-journal.herokuapp.com/) 
