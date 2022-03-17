@@ -1,9 +1,3 @@
-
-body {
-    border: 1px solid red;
-    height: 100vh;
-}
-
 .__tool__tip {
     min-height: 25px;
     background: #040F17;
@@ -14,12 +8,10 @@ body {
     position: absolute;
     align-items: center;
     font-size: 0.875rem;
-    /* text-transform: capitalize; */
     pointer-events: none;
     z-index: 10;
     transition: transform 150ms ease-in-out;
 }
-
 
 
 /* animate with transition */
@@ -37,37 +29,3 @@ body {
 .hide__tooltip {
     display: none;
 }
-
-/* .active__tooltip {
-    animation: fadeIn 1000ms ease-in-out forwards;
-}
-
-.exiting__tooltip {
-    animation: fadeOut 1000ms ease-in-out;
-} */
-
-/* @keyframes fadeIn {
-    0%{
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(75%);
-    }
-    100%{
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from{
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to{
-        visibility: hidden;
-        opacity: 0;
-        transform: translateY(75%);
-    } */
-/* } */
