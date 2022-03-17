@@ -39,16 +39,16 @@
     function checkValidation({ zip, content }) {
         errors = []
         if(!zip.trim()) {
-            errors.push({fieldName: "zip", error: "required"});
+            errors.push({fieldName: "zip", error: "Zip code is required"});
             
 
-        }else if(!Number(zip)) {
-            errors.push({fieldName: "zip", error: "Invalid Input"});
+        }else if(!Number(zip) || (zip.length !== 5 && Number(zip))) {
+            errors.push({fieldName: "zip", error: "Invalid Zip Code"});
 
         }
 
         if(!content.trim()) {
-            errors.push({fieldName: "feelings", error: "required"});
+            errors.push({fieldName: "feelings", error: "Feelings is Required"});
 
         }
 
@@ -57,6 +57,7 @@
 
     function renderErrors() {
         const holders = querySelector('.error', "all");
+
         holders.forEach(holder => {
             const errorcontainer = holder.querySelector("#errorMessage");
             holder.classList.remove("error");
@@ -70,7 +71,7 @@
 
             if( !holder.classList.contains("error") ){
                 holder.classList.add("error");
-                errorcontainer.textContent = err.error
+                errorcontainer.textContent = error
             }
         })
     }
@@ -90,7 +91,8 @@
 
             return parsedData.main.temp;
         }catch(error) {
-            
+            querySelector(".entry .title").style.display = "flex";
+            querySelector(".entry #entryHolder").style.display = "none";
             console.log(error);
         }
     }
@@ -125,6 +127,7 @@
         try {
             const allData = await response.json();
             const { date, temp, content } = allData.projectData;
+
             querySelector(".entry .title").style.display = "none";
             querySelector(".entry #entryHolder").style.display = "block";
             
@@ -173,10 +176,3 @@
 
     // Handle form submit
     button.addEventListener( "click", handleSubmit );
-
-
-    /**
-     * //// TODO ////
-     *  - validation style
-     *  - change the weather icon
-     */
