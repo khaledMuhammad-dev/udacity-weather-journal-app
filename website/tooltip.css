@@ -1,0 +1,73 @@
+
+body {
+    border: 1px solid red;
+    height: 100vh;
+}
+
+.__tool__tip {
+    min-height: 25px;
+    background: #040F17;
+    color: #E7E7E7;
+    box-shadow: 0 3px 3px 0 #003962;
+    border-radius: 3px;
+    padding: 4px 12px;
+    position: absolute;
+    align-items: center;
+    font-size: 0.875rem;
+    /* text-transform: capitalize; */
+    pointer-events: none;
+    z-index: 10;
+    transition: transform 150ms ease-in-out;
+}
+
+
+
+/* animate with transition */
+.active__tooltip {
+    display: flex;
+    transform: translateY(75%);
+}
+
+.fade_in__tooltip {
+    transform: translateY(0);
+}
+.fade_out__tooltip {
+    transform: translateY(75%);
+}
+.hide__tooltip {
+    display: none;
+}
+
+/* .active__tooltip {
+    animation: fadeIn 1000ms ease-in-out forwards;
+}
+
+.exiting__tooltip {
+    animation: fadeOut 1000ms ease-in-out;
+} */
+
+/* @keyframes fadeIn {
+    0%{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(75%);
+    }
+    100%{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from{
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to{
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(75%);
+    } */
+/* } */
