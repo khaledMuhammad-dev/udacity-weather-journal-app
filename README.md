@@ -27,8 +27,8 @@ project link [Weather Journal app ☁](https://udacity-weather-journal.herokuapp
 
 | Criteria                     | Meets Specifications                                                                            |
 | ---------------------------- | ------------------------------------------------------------------------------------------------|
-| Node and Express Environment | Node and Express installed on the local machine.                                                |
-| Project Dependencies         | cors and body-parser installed on the local machine, and included in the project.               |
+| Node and Express Environment | `node` and `express` installed on the local machine.                                            |
+| Project Dependencies         | `cors` and `body-parser` installed on the local machine, and included in the project.           |
 
 
 ## APIs and Routes (server)
