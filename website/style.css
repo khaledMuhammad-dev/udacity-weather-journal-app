@@ -32,7 +32,6 @@ body, html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
 }
 
 body{
@@ -55,7 +54,38 @@ body{
     border-radius: 50px;
     margin: 1rem 0;
 }
+
+.loader {
+    --size: 25px;
+    --border: 4px;
+
+    height: var(--size);
+    width: var(--size);
+
+    border: var(--border) solid var(--navy-blue);
+    border-top: var(--border) solid transparent;
+    border-radius: 100%;
+    animation: loader 450ms linear infinite;
+}
+
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 /* end general */
+
+#app {
+    min-height:100vh;
+    justify-content: center;
+    font-family: var(--family);
+    font-size: 1rem;
+    padding: 80px 0;
+    background: #FAFAFA;
+}
 
 .icon {
     width: 60px;
@@ -75,71 +105,7 @@ body{
 
 .icon__wrapper {
     text-align: center;
-
 }
-
-
-#app {
-    min-height:100vh;
-    justify-content: center;
-    font-family: var(--family);
-    font-size: 1rem;
-    padding: 80px 0;
-    background: #FAFAFA;
-}
-
-.holder{
-    margin-bottom: 1.125rem;
-}
-
-.entry{
-    background: rgb(243, 246, 247);
-    color: var(--navy-blue);
-    height: 150px;
-    padding: 18px;
-    border-radius: var(--radius);
-    
-}
-
-.loader {
-    --size: 25px;
-    --border: 4px;
-
-    height: var(--size);
-    width: var(--size);
-
-    border: var(--border) solid var(--navy-blue);
-    border-top: var(--border) solid transparent;
-    border-radius: 100%;
-    animation: loader 450ms linear infinite;
-}
-
-#entryHolder{
-    display: none;
-}
-
-
-@keyframes loader {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* 
-#date{
-
-}
-
-#temp{
-
-}
-
-#content{
-
-} */
 
 .headline {
     text-align: center;
@@ -150,12 +116,28 @@ body{
     user-select: none;
 }
 
-.title{
+.holder {
+    margin-bottom: 1.125rem;
+}
+
+.entry {
+    background: rgb(243, 246, 247);
+    color: var(--navy-blue);
+    height: 150px;
+    padding: 18px;
+    border-radius: var(--radius);
+}
+
+.title {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
+}
+
+#entryHolder {
+    display: none;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
@@ -169,9 +151,8 @@ label{
 
 
 input, 
-textarea{
-    display:block;
-    width: 100%;
+textarea {
+    display: block;
     padding: 4px 14px;
     font-size: 16px;
     border: 1px solid var(--border);
@@ -184,7 +165,7 @@ textarea{
 
 textarea {
     resize: none;
-    
+    width: 100%;
 }
 
 input {
@@ -196,7 +177,7 @@ input {
     font-size: 0.75rem;
 }
 
-button{
+button {
     width: 100%;
     height: 35px;
     display: flex;
@@ -214,10 +195,6 @@ button{
 
 button[disabled="true"] {
     background: #baeed5;
-}
-
-h1{
-    font-size: 36px;
 }
 
 /* Reset style for HTML element on active to have no border*/
@@ -249,12 +226,11 @@ button:focus {
 
 } 
 
-
-
 .error input,
 .error textarea{
     border: 1px solid red;
 }
+
 .error label {
     color: red;
 }
