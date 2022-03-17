@@ -17,7 +17,7 @@
     let newDate = ( d.getMonth() + 1 )+'.'+ d.getDate()+'.'+ d.getFullYear();
     
     // Handle Errors
-    let errors = [];
+    let errors = []; // fieldName: string <field name>, error: string <error message>
     let RequestStatus = 200;
 
 /**
@@ -39,17 +39,40 @@
     function checkValidation({ zip, content }) {
         errors = []
         if(!zip.trim()) {
-            errors.push({fieldName: "zip code", error: "required"});
+            errors.push({fieldName: "zip", error: "required"});
+            
 
         }else if(!Number(zip)) {
-            errors.push({fieldName: "zip code", error: "Invalid Input"});
+            errors.push({fieldName: "zip", error: "Invalid Input"});
 
         }
 
         if(!content.trim()) {
-            errors.push({fieldName: "content", error: "required"});
+            errors.push({fieldName: "feelings", error: "required"});
 
         }
+
+        renderErrors();
+    }
+
+    function renderErrors() {
+        const holders = querySelector('.error', "all");
+        holders.forEach(holder => {
+            const errorcontainer = holder.querySelector("#errorMessage");
+            holder.classList.remove("error");
+            errorcontainer.textContent = ""
+        });
+
+        errors.forEach(err => {
+            const {fieldName, error} = err;
+            const holder = querySelector(`#${ fieldName }`).parentElement;
+            const errorcontainer = holder.querySelector("#errorMessage");
+
+            if( !holder.classList.contains("error") ){
+                holder.classList.add("error");
+                errorcontainer.textContent = err.error
+            }
+        })
     }
 
     
@@ -91,7 +114,7 @@
     }
 
 
-    const retrieveData = async () =>{
+    const retrieveData = async () => {
         const response = await fetch("/all");
 
         if(RequestStatus !== 200) {
@@ -124,7 +147,7 @@
         checkValidation({ zip, content });
         
         if(errors.length) {
-            console.log(errors);
+            
             button.removeAttribute("disabled");
             button.innerHTML = 'Generate ⚙';
             return;
@@ -150,3 +173,10 @@
 
     // Handle form submit
     button.addEventListener( "click", handleSubmit );
+
+
+    /**
+     * //// TODO ////
+     *  - validation style
+     *  - change the weather icon
+     */
