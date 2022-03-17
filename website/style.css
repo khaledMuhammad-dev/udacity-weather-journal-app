@@ -191,9 +191,16 @@ button {
     cursor: pointer;
     margin-top: 18px;
     border-radius: var(--radius);
+    transition: box-shadow 300ms ease, transform 300ms ease;
 }
 
-button[disabled="true"] {
+button:hover {
+    box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+button[disabled="true"], 
+button[disabled="true"]:hover {
     background: #baeed5;
 }
 
